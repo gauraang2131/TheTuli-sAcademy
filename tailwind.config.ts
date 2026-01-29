@@ -14,6 +14,7 @@ const config: Config = {
             },
             fontFamily: {
                 sans: ['var(--font-inter)', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                serif: ['var(--font-playfair)', 'serif'],
             },
         },
     },

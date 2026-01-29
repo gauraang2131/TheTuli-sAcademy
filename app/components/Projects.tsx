@@ -8,14 +8,16 @@ const projects = [
         title: "Expanding Horizons",
         category: "Swaying The Youth",
         description: "Ideas, inspiration, and experiences worth following. 📸 @roubletulishikhaduttofficial",
-        image: "/expanding-horizons.jpg"
+        image: "/expanding-horizons.jpg",
+        link: "https://www.instagram.com/roubletulishikhaduttofficial?igsh=MTducTdoNGVmMDQ5Yg=="
     },
     {
         id: 2,
         title: "TEDxBasant Nagar",
         category: "Organiser",
         description: "Ideas That Inspire. Voices That Matter.",
-        image: "/tedx-basant-nagar.jpg"
+        image: "/tedx-basant-nagar.jpg",
+        link: "https://www.instagram.com/tedxbasant_nagar?igsh=MTNoZW9zOTIxbHg4dg=="
     },
     {
         id: 3,
@@ -23,7 +25,8 @@ const projects = [
         category: "Owner",
         description: "Celebrating years of fostering curiosity, creativity, and meaningful education.",
         image: "/tulis-academy.png",
-        imageFit: "object-contain p-8"
+        imageFit: "object-contain p-8",
+        link: "https://www.instagram.com/tulistheacademy?igsh=ejB4enM3eDIwcmJv"
     },
     {
         id: 4,
@@ -31,7 +34,8 @@ const projects = [
         category: "Tuli's The Kindergarten",
         description: "Learn, Laugh, Dance",
         image: "/tulis-kindergarten.png",
-        imageFit: "object-contain p-8"
+        imageFit: "object-contain p-8",
+        link: "https://www.instagram.com/tulisthekindergarten?igsh=MXF2YTZyanZiOTNxaw=="
     }
 ];
 
@@ -59,6 +63,13 @@ export default function Projects() {
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             className="group relative p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md hover:bg-white/10 transition-colors duration-300 overflow-hidden cursor-pointer"
                         >
+                            <a
+                                href={project.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="absolute inset-0 z-20"
+                            />
+
                             <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                             <div className="relative z-10 h-64 mb-6 rounded-xl bg-gradient-to-br from-gray-800 to-black overflow-hidden flex items-center justify-center">
@@ -66,7 +77,7 @@ export default function Projects() {
                                     <img
                                         src={project.image}
                                         alt={project.title}
-                                        className={`w-full h-full ${project.imageFit || 'object-cover'} transition-transform duration-500 group-hover:scale-105`}
+                                        className={`w-full h-full ${project.imageFit || 'object-cover'} transition-transform duration-500 group-hover:scale-95`}
                                     />
                                 ) : (
                                     <span className="text-gray-600 font-mono text-sm">Project Image</span>

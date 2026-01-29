@@ -25,7 +25,7 @@ export default function Overlay() {
                     Dr. Rouble Tuli
                 </h1>
                 <p className="text-xl md:text-2xl text-gray-400 font-light">
-                    Education Specialist
+                    Education Research Analyst
                 </p>
             </motion.div>
 
