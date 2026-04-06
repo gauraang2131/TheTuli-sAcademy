@@ -39,29 +39,35 @@ const projects = [
     }
 ];
 
+import LuxuryAesthetic from "./LuxuryAesthetic";
+
 export default function Projects() {
     return (
-        <section className="relative z-20 w-full min-h-screen bg-[#121212] py-24 px-4 md:px-12">
+        <section className="relative z-20 w-full min-h-screen bg-[#0a0a0a] py-32 px-4 md:px-12 border-t border-white/5">
+            <LuxuryAesthetic />
             <div className="max-w-7xl mx-auto">
-                <motion.h2
+                <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                    className="text-4xl md:text-5xl font-bold text-white mb-16 tracking-tight"
+                    transition={{ duration: 0.8 }}
+                    className="mb-20"
                 >
-                    Selected Works
-                </motion.h2>
+                    <span className="text-brand-gold/60 text-[10px] uppercase tracking-[0.4em] mb-4 block">Portfolio</span>
+                    <h2 className="text-5xl md:text-6xl font-serif text-white tracking-tight">
+                        Selected <span className="text-brand-gold/80 italic">Works</span>
+                    </h2>
+                </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                     {projects.map((project, index) => (
                         <motion.div
                             key={project.id}
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="group relative p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md hover:bg-white/10 transition-colors duration-300 overflow-hidden cursor-pointer"
+                            transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                            className="group relative p-8 rounded-sm border border-white/5 bg-[#080808] hover:bg-[#0f0f0f] transition-all duration-700 overflow-hidden cursor-pointer"
                         >
                             <a
                                 href={project.link}
@@ -70,28 +76,31 @@ export default function Projects() {
                                 className="absolute inset-0 z-20"
                             />
 
-                            <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                            {/* Subtle Gold Hover Border */}
+                            <div className="absolute top-0 left-0 w-full h-[1px] bg-brand-gold/30 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left" />
 
-                            <div className="relative z-10 h-64 mb-6 rounded-xl bg-gradient-to-br from-gray-800 to-black overflow-hidden flex items-center justify-center">
+                            <div className="relative z-10 h-72 mb-8 rounded-sm bg-[#050505] overflow-hidden flex items-center justify-center">
                                 {project.image ? (
                                     <img
                                         src={project.image}
                                         alt={project.title}
-                                        className={`w-full h-full ${project.imageFit || 'object-cover'} transition-transform duration-500 group-hover:scale-95`}
+                                        className={`w-full h-full ${project.imageFit || 'object-cover'} transition-transform duration-1000 ease-out group-hover:scale-105 opacity-90 group-hover:opacity-100`}
                                     />
                                 ) : (
                                     <span className="text-gray-600 font-mono text-sm">Project Image</span>
                                 )}
+                                {/* Overlay Gradient */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
                             </div>
 
-                            <div className="relative z-10">
-                                <p className="text-sm font-medium text-emerald-400 mb-2 uppercase tracking-wide">
+                            <div className="relative z-10 flex flex-col items-start">
+                                <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-brand-gold/70 mb-3 bg-brand-gold/5 px-2 py-1 rounded-sm">
                                     {project.category}
-                                </p>
-                                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-emerald-300 transition-colors">
+                                </span>
+                                <h3 className="text-2xl font-serif text-white mb-4 group-hover:text-brand-gold transition-colors duration-500">
                                     {project.title}
                                 </h3>
-                                <p className="text-gray-400 leading-relaxed">
+                                <p className="text-gray-500/50 leading-relaxed font-light text-sm max-w-sm">
                                     {project.description}
                                 </p>
                             </div>

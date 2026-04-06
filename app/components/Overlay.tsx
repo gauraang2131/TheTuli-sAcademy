@@ -13,9 +13,6 @@ export default function Overlay() {
     const opacity2 = useTransform(scrollYProgress, [0.25, 0.35, 0.45], [0, 1, 0]);
     const y2 = useTransform(scrollYProgress, [0.25, 0.45], [50, -50]);
 
-    // Section 3: "Bridging design and engineering." (60% - 80% visible)
-    const opacity3 = useTransform(scrollYProgress, [0.55, 0.65, 0.75], [0, 1, 0]);
-    const y3 = useTransform(scrollYProgress, [0.55, 0.75], [50, -50]);
 
     return (
         <div className="fixed top-0 left-0 w-full h-screen pointer-events-none z-10 flex flex-col justify-center items-center">
@@ -25,7 +22,7 @@ export default function Overlay() {
                     Dr. Rouble Tuli
                 </h1>
                 <p className="text-xl md:text-2xl text-gray-400 font-light">
-                    Education Research Analyst
+                    Education Activist
                 </p>
             </motion.div>
 
@@ -40,16 +37,6 @@ export default function Overlay() {
                 </h2>
             </motion.div>
 
-            {/* Section 3 - Right */}
-            <motion.div
-                style={{ opacity: opacity3, y: y3 }}
-                className="absolute right-[10%] md:right-[20%] text-right max-w-lg"
-            >
-                <h2 className="text-4xl md:text-6xl font-semibold text-white leading-tight">
-                    Bridging Moderation <br />
-                    <span className="text-gray-500">with extremity.</span>
-                </h2>
-            </motion.div>
         </div>
     );
 }

@@ -11,10 +11,17 @@ const config: Config = {
             colors: {
                 background: "var(--background)",
                 foreground: "var(--foreground)",
+                brand: {
+                    red: "#CE1126",
+                    blue: "#0A3161",
+                    gold: "#C5B358",
+                }
             },
             fontFamily: {
-                sans: ['var(--font-inter)', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                sans: ['var(--font-inter)', 'ui-sans-serif', 'system-ui'],
                 serif: ['var(--font-playfair)', 'serif'],
+                phudu: ['var(--font-phudu)', 'display'],
+                hand: ['var(--font-love-ya)', 'cursive'],
             },
         },
     },
