@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import ScrollySection from "../../components/ScrollySection";
-import EarlyBirdSection from "../../components/EarlyBirdSection";
+
 
 const services = [
     { title: "Career Counseling", desc: "Professional psychometric testing and roadmap planning for future careers." },
@@ -109,7 +109,7 @@ export default function AcademyPage() {
                 </div>
             </section>
 
-            <EarlyBirdSection />
+
         </div>
     );
 }
